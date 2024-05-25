@@ -12,26 +12,22 @@ public class HellolibGDX extends ApplicationAdapter {
 
 	SpriteBatch batch;
 	Texture img;
-  private TextureRegion ball;
-  private float x, y;
+	private TextureRegion ball;
+	private float x, y;
 	
 	@Override
 	public void create () {
-
 		batch = new SpriteBatch();
-    ball = new TextureRegion(new Texture("ball.png"));
-    ball.getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		ball = new TextureRegion(new Texture("ball.png"));
+		ball.getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
 	}
 
 	@Override
 	public void render () {
-
 		ScreenUtils.clear(1, 1, 1, 1);
-
-    float delta = Gdx.graphics.getDeltaTime();
-    x += delta * 20;
-    y += delta * 20;
-
+		float delta = Gdx.graphics.getDeltaTime();
+		x += delta * 20;
+		y += delta * 20;
 		batch.begin();
 		batch.draw(ball, x, y, 100, 100);
 		batch.end();
